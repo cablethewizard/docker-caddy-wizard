@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  BASE_NAME: erri120/docker-caddy-porkbun
+  BASE_NAME: cablethewizard/docker-caddy-wizard
 
 jobs:
   buildx:
