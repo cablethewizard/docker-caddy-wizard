@@ -1,0 +1,23 @@
+name: Check Caddy Update
+on:
+  workflow_dispatch: # Allows manual triggering from the GitHub UI
+
+jobs:
+  run-script-job:
+    runs-on: ubuntu-latest # The runner environment (Linux, Windows, or macOS)
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4 # Action to download your repo's code
+
+      - name: Make script executable (optional but recommended)
+        run: chmod +x ./scripts/caddy-update.sh
+
+      - name: Run the Bash script
+        run: ./scripts/caddy-update.sh # Execute the script
+        # Alternatively, run: bash ./my-script.sh (does not require +x permission)
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Apply changes from automated script
