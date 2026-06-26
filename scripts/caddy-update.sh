@@ -19,7 +19,7 @@ LATEST_CADDY_VERSION=$(getLatestVersion "caddyserver/caddy")
 LATEST_CUSTOM_VERSION=$(
     cat Dockerfile | \
     head -n 1 | \
-    grep -E -oh '[0-9](\.[0-9](\.[0-9])?)?$'
+    cut -c 19-
 )
 
 echo "Latest version of Caddy: $LATEST_CADDY_VERSION"
