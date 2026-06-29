@@ -17,4 +17,4 @@ LABEL org.opencontainers.image.documentation="https://github.com/cablethewizard/
 LABEL org.opencontainers.image.source="https://github.com/cablethewizard/docker-caddy-wizard"
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
-CMD ["caddy", "docker-proxy"]
+CMD ["caddy", "run"]
